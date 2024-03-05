@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<section>
+<div class="modelimg">
+    {% for i in rec1 %}
+    <div class="mainimg">
+    <div class="imgg">
+        <img src="/media/{{i.image1}}" alt="" height="730px" width="580px">
+    </div>
+    
+     <div class="imgg1">
+        <img src="/media/{{i.image2}}" alt="" height="730px" width="490px">
+    </div>
+    <div class="imgg2">
+        <img src="/media/{{i.image3}}" alt="" height="360px" width="280px">
+        <img src="/media/{{i.image4}}" alt="" height="370px" width="280px">
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</section>
+{% endblock %}

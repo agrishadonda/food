@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static '/css/hotel.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main1">
+            <div class="logo">
+                <img src="../static/images/logo.png.webp" alt="">
+            </div>
+            <div class="navbar">
+                <nav>
+                    {% url 'hotel' as hotel %}
+                    <a id="{% if request.path == hotel %}active{% endif %}" href="{{hotel}}">Home</a>
+                    {% url 'about' as about %}
+                    <a id="{% if request.path == about %}active{% endif %}" href="{{about}}">About</a>
+                    {% url 'menu' as menu %}
+                    <a id="{% if request.path == menu %}active{% endif %}" href="{{menu}}">Menu</a>
+                    {% url 'blog' as blog %}
+                    <a id="{% if request.path == blog %}active{% endif %}" href="{{blog}}">Blog</a>
+                    {% url 'contact' as contact %}
+                    <a id="{% if request.path == contact %}active{% endif %}" href="{{contact}}">Contact</a>
+                </nav>
+            </div>
+            <div class="btn">
+                <a href="contact/">order online</a>
+            </div>
+        </div>
+       
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <footer>
+        <div class="footer">
+            <div class="main2">
+                <div class="logo1">
+                    <img src="../static/images/logo.png.webp" alt="">
+                </div>
+                <div class="tital">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Testimonial</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                   
+                </div>
+                <div class="tital2">
+                    <h4>Useful links</h4>
+                    <ul>
+                        <li><a href="#">Registration</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Terms&Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="foot1">
+                    <div class="tital3">
+                        <h4>Instagram Feed</h4>
+                    </div>
+                    <div class="png">
+                        <div class="im1">
+                            <img src="../static/images/instagram1.png.webp" alt="">
+                            <img src="../static/images/instagram2.png.webp" alt="">
+                            <img src="../static/images/instagram3.png.webp" alt="">
+                        </div>
+                        <div class="im2">
+                            <img src="../static/images/instagram4.png.webp" alt="">
+                            <img src="../static/images/instagram5.png.webp" alt="">
+                            <img src="../static/images/instagram6.png.webp" alt="">
+                        </div>
+                    </div>
+                  
+                </div>
+              
+
+            </div>
+            <div class="footdetail">
+                <div class="detail">
+                    <p>
+                        Copyright  <i class="fa-regular fa-copyright"></i>  2024 All rights reserved | This template is made with  <i class="fa-solid fa-heart"></i></p>
+                </div>
+                <div class="follow">
+                    <p>Follow Us <i class="fa-brands fa-twitter"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-solid fa-globe"></i><i class="fa-brands fa-instagram"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section>
+    <div class="banner">
+            
+        <!-- <div class="contain">
+           <p>Discover your Teste</p>
+           <h1>We belive good food<br>
+               offer great smile </h1>
+       </div>
+       <div class="contain2">
+           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut<br>
+               aliquip ex ea commodo consequat is aute irure.</p>
+       </div>
+       <div class="button2">
+           <a href="">Resurvation</a>
+       </div>  -->
+    </div>
+
+       <div class="con">
+        <p>Discover your Teste</p>
+        <h1>We belive good food<br>
+            offer great smile </h1>
+       </div>
+    </div>
+</section>
+
+      
+  
+</section>
+    <section>
+        <div class="banner3">
+            <div class="conn1">
+                <div class="contain3">
+                    <p>Discover your Teste</p>
+                    <h1>We Provide Good Food<br>
+                    For Your Family!</h1>
+                </div>
+                <div class="paragraph">
+                    <p>Ut enim acgsd minim veniam, quxcis nostrud exercitation<br>
+                        ullamco laboris nisi ufsit aliquip ex ea commodo consequat is<br>
+                        aute irure m, quis nostrud exer.</p>
+                </div>
+                <div>
+                    <div class="main3">
+                        <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="minpara1">
+                            <p>Ut enim ad minim veniam,<br>quis nostrud exer.</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="minpara1">
+                            <p>Ut enim ad minim veniam,<br>quis nostrud exer.</p>
+                        </div>
+                    </div>
+                    <div class="main4">
+                        <div class="icon">
+                            <i class="fa-brands fa-redhat"></i>
+
+                        </div>
+                        <div class="minpara1">
+                            <p>Ut enim ad minim veniam,<br>quis nostrud exer.</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="minpara1">
+                            <p>Ut enim ad minim veniam,<br>quis nostrud exer.</p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="img4">
+                <img src="../static/images/about.png.webp" alt="" height="" width="550px">
+            </div>
+        </div>
+        <div class="banner4">
+            <div class="back2">
+                <p>Our Offered Menu</p>
+                <h1>We Provide Good Food<br>
+                    For Your Family!</h1>
+                <nav>
+                    <a href="">Special</a>
+                    <a href="">Lunch</a>
+                    <a href="">Breckfirst</a>
+                    <a href="">Dinner</a>
+                </nav>
+            </div>
+        </div>
+        <div class="modelimg">
+            <div class="mainimg">
+            <div class="imgg">
+                <img src="../static/images/gallery1.webp" alt="" height="730px" width="580px">
+            </div>
+            
+             <div class="imgg1">
+                <img src="../static/images/gallery2.webp" alt="" height="730px" width="490px">
+            </div>
+            <!-- <div class="imgg2">
+                <img src="../static/images/gallery3.webp" alt="" height="360px" width="280px">
+                <img src="../static/images/gallery4.webp" alt="" height="370px" width="280px">
+            </div> -->
+            </div>
+            
+        </div>
+      <div class="mains">
+        {% for i in rec5%}
+        <div class="mainimage1">
+            <div class="immg3">
+                <img src="/media/{{i.img}}" alt="" width="550px">
+            </div>
+        </div>
+        <div class="mainconn">
+            <div class="tital2">
+                <p>{{i.tital}}</p>
+                {% load custom_filter %}
+                {% with data=i.content|split %}
+                    {% for element in data %}
+                        <h1>{{element}}</h1>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            
+            <div class="par">
+                {% with data=i.para1|split %}
+                {% for element in data %}
+                    <p>{{element}}</p>
+                {% endfor %}
+            {% endwith %}
+            </div><br>
+            <div class="par1">
+                {% with data=i.para2|split %}
+                {% for element in data %}
+                    <p>{{element}}</p>
+                {% endfor %}
+            {% endwith %}
+            </div>
+            <div class="butt2">
+                <a href="about/">Learn More</a>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+         <div class="main8">
+        
+            <div class="bg2">
+                <p>About Our Restaurant</p>
+                <h1>Book A Table</h1>
+                <form  method="get">
+                    <div class="mains1">
+                        <div class="per">
+                            {{ person_form }}
+                        </div>
+                        <div class="date">
+                            {{ date_form }}
+                        </div>
+                    <button type="Book Now">Book Now</button>
+                    </div>
+                </form>
+               
+            </div>
+            
+          
+           
+         </div>
+         <div class="mainoffer">
+            <div  class="offer">
+                <p>Servicees We Offer</p>
+                <h1>Our Best Services</h1>
+            </div>
+         </div>
+         <div class="mainoffer1">
+            <div class="chef1">
+                <div class="icons">
+                    <i class="fa-solid fa-user"></i>
+                    <h2>Best Chef</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur<br>
+                        adipisicing elit, sed do eiusmod tempor<br>
+                        incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+            <div class="chef2">
+                <div class="icons2">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h2>Quality Food</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur<br>
+                        adipisicing elit, sed do eiusmod tempor<br>
+                        incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+            <div class="chef3">
+                <div class="icons2">
+                    <i class="fa-solid fa-user"></i>
+                    <h2>Perfect Cook</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur<br>
+                        adipisicing elit, sed do eiusmod tempor<br>
+                        incididunt ut labore et dolore.</p>
+            </div>
+         </div>
+    </section>
+    <section>
+      <div class="men">
+        <div class="back5">
+            <div class="tital3">
+                <p>About Our Restaurant</p>
+                <h1>We provide Good Food<br>
+                For Your Family!</h1>
+                    
+            </div>
+            <div class="per">
+                <p>Ut enim acgsd minim veniam, quxcis nostrud exercitation ullamco<br>
+                    laboris nisi ufsit aliquip ex ea commodo consequat is aute irure m, quis<br>
+                    nostrud exer.</p>
+                  
+            </div>
+            <div class="mail">
+                <!-- <input type="email"> -->
+                <form method="get">
+
+                    {{ email_form }}
+                   <button type="Subscribe">Subscribe</button>
+                   
+                </form>
+            </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
+{% endblock %}

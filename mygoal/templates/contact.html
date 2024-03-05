@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% block  content %}
+<section>
+    <div class="banner7">
+        <div class="back8">
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="icoon">
+        <div class="icoons1">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <h3>oops!somthing went wrong</h3>
+            <p>This page didn't load Google Maps correctly. See the JavaScript console for technical details.</p>
+        </div>
+    </div>
+</section>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+ {% endblock %}

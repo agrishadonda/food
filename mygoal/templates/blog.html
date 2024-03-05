@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block  content %}
+<section>
+    <div class="banner6">
+        <div class="back7">
+            <h1>Blog</h1>
+        </div>
+    </div>
+</section>
+<section>
+    
+    <div class="cont1">
+        <div class="sec">
+        {% for i in recs1 %}
+        <div class="card">
+            <img src="/media/{{i.image1}}" alt="">
+            <div class="container">
+                    <h1><b>{{i.cont1}}</b></h1>
+               
+                {% load custom_filter %}
+                {% with data=i.paragraph|split %}
+                    {% for element in data %}
+                        <p>{{element}}</p>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            <div class="icons1">
+                <i class="fa-solid fa-user-tie"></i>Travel, Lifestyle |    <i class="fa-solid fa-comments"></i>03 Comments
+            </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+        <div class="search">
+            <div class="serch1">
+                <input type="text" placeholder="search keyword">
+            </div>
+        </div>
+        
+    </div>
+</section>
+ {% endblock %}
